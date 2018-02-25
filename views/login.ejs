@@ -1,0 +1,22 @@
+<%- include('./partials/cabecera'); %>
+    <%- include('./partials/menu'); %>
+        <div class="jumbotron">
+            <div class="container">
+                <h2 class="display-3">Login</h2>
+            </div>
+            <div class="container">
+                <form enctype="multipart/form-data" onsubmit="return comprobarUsuario(this)" action="/usuarios/login" method="post">
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Usuario</label>
+                        <input type="text" name="usuario" class="form-control" placeholder="Usuario">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Contraseña</label>
+                        <input type="password" name="password" class="form-control" placeholder="Contraseña">
+                    </div>
+                    <button type="submit" class="btn btn-primary mb-2">Iniciar Sesión</button>
+                </form>
+            </div>
+        </div>
+        </main>
+        <%- include('./partials/pie'); %>

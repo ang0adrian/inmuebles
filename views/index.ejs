@@ -1,0 +1,51 @@
+<%- include('./partials/cabecera'); %>
+    <%- include('./partials/menu'); %>
+        <main role="main">
+            <div class="jumbotron">
+                <div class="container">
+                    <h1 class="display-3">Inmobiliara Navarro García</h1>
+                    <p>Expertos en venta de inmuebles.</p>
+                </div>
+            </div>
+            <hr>
+            <div class="container">
+                <h2 class="display-3">Inmueble disponibles</h2>
+            </div>
+            <%   inmuebles.forEach(inmueble => { %>
+                <div class="col-xs-12 col-md-6 col-lg-3">
+                    <div class="card">
+                        <img class="card-img-top" src="<%= inmueble.imagen %>" alt="Card image cap" height="250px" width="275px">
+                        <div class="card-block">
+                            <p class="card-text">
+                                Descripción :
+                                <br>
+                                <%= inmueble.descripcion %>
+                            </p>
+                            <p class="card-text">Numero de habitaciones :
+                                <b>
+                                    <%= inmueble.numeroHabitaciones %>
+                                </b>
+                            </p>
+                            <p class="card-text">Superficie :
+                                <b>
+                                    <%= inmueble.superficie %> m2
+                                </b>
+                            </p>
+                            <p class="card-text">Precio :
+                                <b>
+                                    <%= inmueble.precio %>
+                                </b>€</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">Tipo de inmueble :
+                                <%= inmueble.tipo.nombre %>
+                            </small>
+                        </div>
+                        <a href="/inmuebles/info/<%= inmueble.id%>">
+                            <button type="submit" class="btn btn-primary mb-2">Mas Información</button>
+                        </a>
+                    </div>
+                </div>
+                <%   }); %>
+        </main>
+        <%- include('./partials/pie'); %>
